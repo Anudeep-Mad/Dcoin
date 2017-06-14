@@ -51,7 +51,7 @@ public class IndexController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public ModelAndView create(@ModelAttribute Transactions transactions) throws NoSuchAlgorithmException, UnknownHostException{
 		transactionsDAO.newTransactions(transactions);
-		return new ModelAndView("redirect:/upload");
+		return new ModelAndView("redirect:/");
 	}
     
     @RequestMapping(value = "/createuser", method = RequestMethod.POST)

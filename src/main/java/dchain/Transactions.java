@@ -3,15 +3,8 @@ package dchain;
 public class Transactions {
 	
 	String fromName,toName;
-	String amount,blockId;
+	String amount;
 	
-	
-	public String getBlockId() {
-		return blockId;
-	}
-	public void setBlockId(String blockId) {
-		this.blockId = blockId;
-	}
 	public Transactions(){
 		
 	}
