@@ -15,8 +15,8 @@ public class SignUpDAO {
 		
 		//MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
 		
-		if (!mongoTemplate.collectionExists("Users")) {
-			mongoTemplate.createCollection("Users");
+		if (!mongoTemplate.collectionExists(SignUp.class)) {
+			mongoTemplate.createCollection(SignUp.class);
 		}
 		//mongoTemplate.insert(signup, "DcoinUsers");
 		mongoTemplate.insert(signup);
