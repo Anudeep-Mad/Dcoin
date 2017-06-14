@@ -34,7 +34,7 @@ public class LoginDAO {
 			return new ModelAndView("redirect:/create");
 		}
 		else {
-			return new ModelAndView("redrect:/login");
+			return new ModelAndView("redirect:/login");
 		}
 
 	}
