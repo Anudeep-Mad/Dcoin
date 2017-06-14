@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Transactions</title>
 </head>
 <body>
 <form:form action="upload" method="post" modelAttribute="transactions">
@@ -28,6 +28,9 @@
 	</tr>
 	
 </table>
+</form:form>
+<form:form action="view" >
+	<input type="submit" value = "View Transactions"/>
 </form:form>
 </body>
 </html>
