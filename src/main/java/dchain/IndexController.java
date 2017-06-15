@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import dchain.DAO.DataTransactions;
 import dchain.DAO.LoginDAO;
+import dchain.DAO.MineTransactions;
 import dchain.DAO.SignUpDAO;
 import dchain.DAO.TransactionsDAOImpl;
 import dchain.DAO.TransactionsRepository;
@@ -29,6 +29,7 @@ public class IndexController {
 	private TransactionsDAOImpl transactionsDAO=new TransactionsDAOImpl();
 	private SignUpDAO signupDao = new SignUpDAO();
 	private LoginDAO loginDao = new LoginDAO();
+	private MineTransactions miner = new MineTransactions();
     @RequestMapping(value="/")
     public String index() {
         return "index";
@@ -60,6 +61,11 @@ public class IndexController {
 		transactionsDAO.newTransactions(transactions);
 		return new ModelAndView("redirect:/");
 	}
+    @RequestMapping(value = "/mine")
+   	public ModelAndView mine() throws NoSuchAlgorithmException, UnknownHostException{
+   		miner.mineTransactions();
+   		return new ModelAndView("redirect:/");
+   	}
     @RequestMapping(value = "/view", method = RequestMethod.POST)
 	public ModelAndView show(ModelAndView model) throws NoSuchAlgorithmException, UnknownHostException{
 		List<Transactions> trans = dataTransactions.view();

@@ -4,8 +4,15 @@ public class Transactions {
 	
 	String fromName,toName;
 	String amount,blockId;
+	boolean mineStatus=false;
 	
 	
+	public boolean isMineStatus() {
+		return mineStatus;
+	}
+	public void setMineStatus(boolean mineStatus) {
+		this.mineStatus = mineStatus;
+	}
 	public String getBlockId() {
 		return blockId;
 	}

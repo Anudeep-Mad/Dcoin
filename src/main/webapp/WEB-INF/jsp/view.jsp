@@ -22,5 +22,8 @@
 				<li>${listValue.blockId}</li>
 			</c:forEach>
 		</ul>
+	<form  action = "/mine">
+	 <input type = "submit" value = "Mine"/>
+	 </form>
 </body>
 </html>
